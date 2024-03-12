@@ -11,8 +11,12 @@ const Footer = () => {
   };
 
   return (
-    <footer>
-      <button disabled={participants.length < 3} onClick={startGame}>
+    <footer className="footer-config">
+      <button
+        className="button"
+        disabled={participants.length < 3}
+        onClick={startGame}
+      >
         Iniciar brincadeira
       </button>
     </footer>
