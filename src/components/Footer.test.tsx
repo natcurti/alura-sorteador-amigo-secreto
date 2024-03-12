@@ -17,6 +17,14 @@ jest.mock("react-router-dom", () => {
   };
 });
 
+const mockDraw = jest.fn();
+
+jest.mock("../state/hook/useDraw", () => {
+  return {
+    useDraw: () => mockDraw,
+  };
+});
+
 describe("Quando não existem participantes suficientes", () => {
   beforeEach(() => {
     (useParticipantsList as jest.Mock).mockReturnValue([]);
@@ -63,5 +71,6 @@ describe("Quando existem participantes suficientes", () => {
     fireEvent.click(button);
     expect(mockNavigate).toHaveBeenCalledTimes(1);
     expect(mockNavigate).toHaveBeenCalledWith("/sorteio");
+    expect(mockDraw).toHaveBeenCalledTimes(1);
   });
 });
