@@ -16,8 +16,12 @@ const Draw = () => {
     e.preventDefault();
     if (result.has(currentParticipant)) {
       setResultDraw(result.get(currentParticipant)!);
+      setTimeout(() => {
+        setResultDraw("");
+      }, 5000);
     }
   };
+
   return (
     <Card>
       <section className="draw">
