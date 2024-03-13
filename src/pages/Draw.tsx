@@ -30,6 +30,7 @@ const Draw = () => {
             value={currentParticipant}
             onChange={(e) => setCurrentParticipant(e.target.value)}
           >
+            <option>Selecione seu nome:</option>
             {participants.map((participant) => (
               <option key={participant}>{participant}</option>
             ))}
@@ -41,10 +42,10 @@ const Draw = () => {
             {resultDraw}
           </p>
         )}
+        <footer className="draw">
+          <img src="/images/aviao.png" alt="Um desenho de um avião de papel" />
+        </footer>
       </section>
-      <footer className="draw">
-        <img src="/images/aviao.png" alt="Um desenho de um avião de papel" />
-      </footer>
     </Card>
   );
 };
